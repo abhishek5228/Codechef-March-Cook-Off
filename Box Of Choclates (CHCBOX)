@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		int n;
+		cin >> n;
+		int *arr=new int[n];
+		for (int i = 0; i < n; i++){
+		    cin >> arr[i];
+		}
+		int m =*max_element(arr,arr+n);
+		int start,end;
+		for (int i=n-1;i>=0;i--)
+		{
+			if (arr[i]== m)
+			{
+				
+				start = i;
+				break;
+				
+			}
+		}
+		for(int i=0;i<n;i++)
+        {
+
+            if(arr[i]==m)
+            {
+
+                end=i;
+                break;
+            }
+        }
+        //cout<<start<<end;
+		int p=start-end;
+		if (p>=n/2)
+		{
+			cout<<0<<endl;
+		}
+		else
+			cout<<(n/2)-p<<endl;
+	}
+
+	return 0;
+}
